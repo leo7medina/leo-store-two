@@ -7,7 +7,20 @@ import { Product } from './produc.model';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'leo-store-two';
+
+  imgParent = '';
+  showImg = true;
+
+
+  onLoaded(img: string) {
+    console.log('log padre', img);
+  }
+
+  toggleImg() {
+    this.showImg = !this.showImg;
+  }
+
+  /* title = 'leo-store-two';
 
   widthImg = 10;
   name = 'Nicolas';
@@ -94,5 +107,5 @@ export class AppComponent {
 
   onRegister() {
     console.log(this.register);
-  }
+  } */
 }
