@@ -10,15 +10,15 @@ import {RegisterComponent} from "./pages/register/register.component";
 import {RecoveryComponent} from "./pages/recovery/recovery.component";
 
 const routes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full'},
   { path: 'home', component: HomeComponent},
-  { path: 'category', component: CategoryComponent},
+  { path: 'category/:id', component: CategoryComponent},
   { path: 'login', component: LoginComponent},
   { path: 'my-cart', component: MycartComponent},
   { path: 'not-found', component: NotFoundComponent},
   { path: 'profile', component: ProfileComponent},
   { path: 'register', component: RegisterComponent},
   { path: 'recovery', component: RecoveryComponent}
-
 ];
 
 @NgModule({
