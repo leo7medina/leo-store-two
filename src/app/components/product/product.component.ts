@@ -14,7 +14,7 @@ export class ProductComponent {
     price: 0,
     images: [],
     title: '',
-    category: { id: '', name: ''},
+    category: { id: null, name: ''},
     description: ''
   };
   @Output() addedProduct = new EventEmitter<Product>();

@@ -23,8 +23,8 @@ export class ProductsComponent {
     price: 0,
     images: [''],
     title: '',
-    category: {
-      id: '',
+    category:  {
+      id: null,
       name: '',
     },
     description: ''
