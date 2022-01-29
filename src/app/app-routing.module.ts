@@ -15,10 +15,10 @@ const routes: Routes = [
   { path: 'category/:id', component: CategoryComponent},
   { path: 'login', component: LoginComponent},
   { path: 'my-cart', component: MycartComponent},
-  { path: 'not-found', component: NotFoundComponent},
   { path: 'profile', component: ProfileComponent},
   { path: 'register', component: RegisterComponent},
-  { path: 'recovery', component: RecoveryComponent}
+  { path: 'recovery', component: RecoveryComponent},
+  { path: '**', component: NotFoundComponent}
 ];
 
 @NgModule({
