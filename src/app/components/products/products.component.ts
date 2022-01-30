@@ -14,21 +14,16 @@ export class ProductsComponent {
   myShoppingCart: Product[] = [];
   total = 0;
   @Input() products: Product[] = [];
+  @Input() set productId(id: string | null) {
+    if (id) {
+      this.onShowDetail(id);
+    }
+  }
   @Output() loadMore = new EventEmitter();
   today = new Date(2019, 1,1);
   date = new Date(2021, 1, 21);
   showProductDetail = false;
-  productChosen: Product = {
-    id: '',
-    price: 0,
-    images: [''],
-    title: '',
-    category:  {
-      id: null,
-      name: '',
-    },
-    description: ''
-  };
+  productChosen: Product | null = null;
   statusDetail: 'loading' | 'success' | 'error' | 'init' = 'init';
 
   constructor(
@@ -49,7 +44,10 @@ export class ProductsComponent {
 
   onShowDetail(id: string) {
     this.statusDetail = 'loading';
-    this.toggleProductDetail();
+    if (!this.showProductDetail) {
+      this.showProductDetail = true;
+    }
+    //this.toggleProductDetail();
     this.productsService.getProduct(id)
     .subscribe(data => {
       this.productChosen = data;
