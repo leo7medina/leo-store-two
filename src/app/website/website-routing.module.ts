@@ -16,7 +16,7 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: '/home', pathMatch: 'full'},
       { path: 'home', component: HomeComponent},
-      { path: 'category/:id', component: CategoryComponent},
+      { path: 'category', loadChildren: () => import('./pages/category/category.module') },
       { path: 'product/:id', component: ProductDetailComponent},
       { path: 'login', component: LoginComponent},
       { path: 'my-cart', component: MycartComponent},
