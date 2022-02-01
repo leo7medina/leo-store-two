@@ -24,12 +24,16 @@ export class AuthService {
       );
   }
 
-  getProfile(token: string) {
-    return this.http.get<User>(`${this.apiUrl}/profile`, {
-      headers: {
-        Authorization: `Bearer ${token}`
+  getProfile(token?: string) {
+    let httpHeader = {}
+    if (token) {
+      httpHeader = {
+        headers: {
+          Authorization: `Bearer ${token}`
+        }
       }
-    });
+    }
+    return this.http.get<User>(`${this.apiUrl}/profile`, httpHeader);
   }
 
   loginAndGet(email: string, password: string) {
