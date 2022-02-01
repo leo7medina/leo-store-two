@@ -42,4 +42,8 @@ export class AuthService {
         switchMap(rta => this.getProfile(rta.access_token))
       );
   }
+
+  logout() {
+    this.tokenService.removeToken();
+  }
 }
