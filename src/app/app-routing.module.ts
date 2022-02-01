@@ -5,7 +5,10 @@ import {NotFoundComponent} from "./website/pages/not-found/not-found.component";
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./website/website.module').then(m => m.WebsiteModule)
+    loadChildren: () => import('./website/website.module').then(m => m.WebsiteModule),
+    data: {
+      preload: true
+    }
   },
   {
     path: 'cms',
