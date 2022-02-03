@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import {Routes, RouterModule, PreloadAllModules} from '@angular/router';
 import {NotFoundComponent} from "./website/pages/not-found/not-found.component";
 import {QuicklinkStrategy} from "ngx-quicklink";
+import {AdminGuard} from "./guards/admin.guard";
 
 const routes: Routes = [
   {
@@ -13,6 +14,7 @@ const routes: Routes = [
   },
   {
     path: 'cms',
+    canActivate: [AdminGuard],
     loadChildren: () => import('./cms/cms.module').then(m => m.CmsModule)
   },
   { path: '**', component: NotFoundComponent}
