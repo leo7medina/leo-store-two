@@ -9,6 +9,7 @@ import {ProfileComponent} from "./pages/profile/profile.component";
 import {RegisterComponent} from "./pages/register/register.component";
 import {RecoveryComponent} from "./pages/recovery/recovery.component";
 import {AuthGuard} from "../guards/auth.guard";
+import {ExitGuard} from "../guards/exit.guard";
 
 const routes: Routes = [
   { path: '',
@@ -21,7 +22,7 @@ const routes: Routes = [
       { path: 'login', component: LoginComponent},
       { path: 'my-cart', component: MycartComponent},
       { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
-      { path: 'register', component: RegisterComponent},
+      { path: 'register', component: RegisterComponent, canDeactivate: [ExitGuard]},
       { path: 'recovery', component: RecoveryComponent},
     ]
   },
