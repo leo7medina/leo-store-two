@@ -14,6 +14,7 @@ import {LayoutComponent} from "./components/layout/layout.component";
 import {SwiperModule} from "swiper/angular";
 import {SharedModule} from "../shared/shared.module";
 import {QuicklinkModule} from "ngx-quicklink";
+import {ButtonModule} from "primeng/button";
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import {QuicklinkModule} from "ngx-quicklink";
     WebsiteRoutingModule,
     SwiperModule,
     SharedModule,
-    QuicklinkModule
+    QuicklinkModule,
+    ButtonModule
   ]
 })
 export class WebsiteModule { }

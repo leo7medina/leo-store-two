@@ -38,11 +38,11 @@
         </ul>
       </nav>
       <div class="info">
-        <button *ngIf="!profile; else elseBlock" (click)="login()">Login</button>
+        <button pButton *ngIf="!profile; else elseBlock" type="button" class="p-button-info" (click)="login()"> Login </button>
         <ng-template #elseBlock>
 
           <a routerLink="/profile">{{ profile?.email }}</a>
-          <button (click)="logout()">Logout</button>
+          <button pButton type="button" class="p-button-info" (click)="logout()">Logout</button>
         </ng-template>
         <div class="cart">
           <a href="">
